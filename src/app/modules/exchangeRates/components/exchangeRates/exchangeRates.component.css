@@ -1,0 +1,98 @@
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrowDown {
+  height: 80px;
+  margin-top: 10px;
+  transform: rotate(200grad);
+}
+
+.arrowUp {
+  height: 30px;
+  margin-top: 10px;
+  transform: rotate(200grad);
+}
+
+.arrows {
+
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+#distanceBlocks {
+  height: 100px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selectFields, .buttonClear {
+  background: antiquewhite;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  font-size: 17px;
+}
+
+.buttonClear {
+  margin-top: 20px;
+  background: burlywood;
+}
+
+.arrowImage {
+  margin-top: 20px;
+  height: 70px;
+}
+
+.buttonClear:hover {
+  background: darkgoldenrod;
+}
+
+.inputs {
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.labels {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+#firstCurrencyValue:hover, #secondCurrencyValue:hover {
+  border: 3px solid green;
+}
+
+.activeInput {
+  background: green;
+}
+
+.imageUp {
+  transform: rotate(180deg)
+}
+
+.exchangeRate {
+  background: antiquewhite;
+  font-size: 16px;
+  display: flex;
+}
+
+.exchangeRateCurrency {
+  margin: 20px;
+  font-weight: bold;
+}
+
+
