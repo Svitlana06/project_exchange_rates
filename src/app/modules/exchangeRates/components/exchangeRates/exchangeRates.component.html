@@ -1,0 +1,40 @@
+<div>
+  <div class="exchangeRate">
+    <div *ngIf="usdRate" class="exchangeRateCurrency">USD: {{usdRate.rate}}</div>
+    <div *ngIf="eurRate" class="exchangeRateCurrency">EUR: {{eurRate.rate}}</div>
+  </div>
+  <form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group">
+      <label for="firstCurrencyValue" class="form-control labels">№1 Валюта</label>
+      <input type="text" id="firstCurrencyValue" class="form-control inputs"
+             name="sumSelectedFirst" ngModel
+             [(ngModel)]="sumSelectedFirst" [value]="currentResultSecond"
+             (ngModelChange)="changedFirstInput($event)">
+      <select name="nameSelectedFirst" class="form-control selectFields"
+              ngModel (ngModelChange)="changedFirstOption($event)">
+        <option value="" selected disabled hidden>Обрати валюту</option>
+        <option *ngFor="let currency of currencies" class="form-control">{{currency.cc}}</option>
+      </select>
+    </div>
+
+    <div id="distanceBlocks"><img class="arrowImage" [ngClass]="{'imageUp': activeInput}" src="https://www.svgrepo.com/show/147973/big-down-arrow.svg">
+
+    </div>
+    <div class="form-group">
+      <label for="secondCurrencyValue" class="form-control labels"> №2 Валюта </label>
+      <input type="text" id="secondCurrencyValue" class="form-control inputs" name="sumSelectedSecond" ngModel
+             [(ngModel)]="sumSelectedSecond" [value]="currentResultFirst"
+             (ngModelChange)="changedSecondInput($event)">
+      <select name="nameSelectedSecond" ngModel (ngModelChange)="changedSecondOption($event)" class="selectFields">
+        <option value="" selected disabled hidden>Обрати валюту</option>
+        <option *ngFor="let currency of currencies" class="form-control">{{currency.cc}}</option>
+      </select>
+    </div>
+
+    <div>
+      <button class="buttonClear" (click)="buttonClear()"> Oчистити</button>
+    </div>
+
+  </form>
+
+</div>
