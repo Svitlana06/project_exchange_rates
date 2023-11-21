@@ -37,7 +37,7 @@ export class ExchangeRatesComponent implements OnInit {
 
   }
 
-  catchErrorsFirstChanged() {
+  catchFirstChanged() {
     if (isNaN(this.sumSelectedFirst) || isNaN(this.currentSelectedSecond)) {
       this.sumSelectedSecond = 0;
     }
@@ -48,7 +48,7 @@ export class ExchangeRatesComponent implements OnInit {
 
   }
 
-  catchErrorsSecondChanged() {
+  catchSecondChanged() {
     if (isNaN(this.sumSelectedSecond) || isNaN(this.currentSelectedFirst)) {
       this.sumSelectedFirst = 0;
     }
@@ -70,7 +70,7 @@ export class ExchangeRatesComponent implements OnInit {
     if (this.currentSelectedSecond === undefined || this.currentSelectedFirst === undefined) {
       this.currentSelectedSecond = 0;
     }
-    this.catchErrorsSecondChanged()
+    this.catchSecondChanged()
     this.check = false;
   }
 
@@ -103,7 +103,7 @@ export class ExchangeRatesComponent implements OnInit {
       this.currentResultFirst = (this.currentSumFirst * this.currentSelectedFirst /
         this.currentSelectedSecond).toFixed(3)
     }
-    if (this.check && this.currentSumSecond > 0) {
+    if (!this.check && this.currentSumSecond > 0) {
       this.currentResultSecond = (this.currentSumSecond * this.currentSelectedSecond /
         this.currentSelectedFirst).toFixed(3)
     }
@@ -114,7 +114,7 @@ export class ExchangeRatesComponent implements OnInit {
     if (this.currentSelectedFirst === undefined) {
       this.currentSelectedFirst = 0;
     }
-    this.catchErrorsFirstChanged()
+    this.catchFirstChanged()
     this.check = true;
     this.activeInput = false;
     if ((this.currentSelectedFirst === 0 && this.currentSelectedSecond === 0) ||

@@ -83,6 +83,11 @@ form {
 .imageUp {
   transform: rotate(180deg)
 }
+.textArea{
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 13px;
+}
 
 .exchangeRate {
   background: antiquewhite;
